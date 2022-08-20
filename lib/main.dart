@@ -30,7 +30,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<bool> selects = [false, false, false, false, false];
   List<Language> languages = [
     Language("Android Nativo", "Linguagens C, Java, Kotlin"),
     Language("Ionic", "Linguagens Javascript e TypeScript"),
@@ -64,7 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> buildListItens() {
     return languages
       .where((language) => language.selected)
-      .map((language) => getItemList(language.title, language.subtitle, language.icon != null ? language.icon! : Icons.blur_circular))
+      .map((language) => getItemList(language.title, language.subtitle, 
+        language.icon != null ? language.icon! : Icons.blur_circular))
         .toList();
   }
 
